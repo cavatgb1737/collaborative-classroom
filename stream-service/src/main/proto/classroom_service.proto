@@ -1,0 +1,17 @@
+syntax = "proto3";
+package classroomservice;
+
+message ObtainEmailsRequest{
+  string classroomId = 1;
+  string teacherId = 2;
+}
+
+message ObtainEmailsResponse{
+  repeated string emails = 1;
+  bool perms = 2;
+}
+
+
+service ClassroomService{
+  rpc RetrieveEmails(ObtainEmailsRequest) returns (ObtainEmailsResponse);
+}

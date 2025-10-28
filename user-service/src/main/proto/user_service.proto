@@ -1,0 +1,15 @@
+syntax = "proto3";
+package userservice;
+
+message RetrieveUserDataReq{
+  string email = 1;
+}
+
+message RetrieveUserDataRes{
+  string imageUrl = 1;
+  string name = 2;
+}
+
+service UserService{
+  rpc RetrieveUserData(RetrieveUserDataReq) returns (RetrieveUserDataRes);
+}
